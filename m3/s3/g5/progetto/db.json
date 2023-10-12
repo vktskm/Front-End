@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "email": "vincenzo@gmail.com",
+      "password": "$2a$10$iGdiOCu8mGBbE7NTNOtIn.4pW8iYarZav6G92jVNUJXfO1rMaC9Eu",
+      "name": "Vincenzo",
+      "surname": "Licata",
+      "id": 2
+    },
+    {
+      "email": "angelo@gmail.com",
+      "password": "$2a$10$tjiz4LylHIsBJBlAxTUJk.bV4HKtyr94dqraKGYclTY5RXz1Ps2AO",
+      "name": "Angelo",
+      "surname": "Licata",
+      "id": 3
+    },
+    {
+      "email": "salvatore@gmail.com",
+      "password": "$2a$10$i/hf7YlHxy9JHl3CyosKve.fW3LWOBjKRGe/7OpUeyxdOs25IQ.ti",
+      "name": "Salvatore",
+      "surname": "Maria",
+      "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "id": 2,
+      "nome": "Angelo",
+      "cognome": "Pira",
+      "eta": "37"
+    },
+    {
+      "id": 3,
+      "nome": "Giulia",
+      "cognome": "Lai",
+      "eta": "30"
+    },
+    {
+      "id": 4,
+      "nome": "Giulia",
+      "cognome": "Rossi",
+      "eta": "26"
+    },
+    {
+      "nome": "Maria",
+      "cognome": "Iannello",
+      "eta": 56,
+      "id": 6
+    },
+    {
+      "nome": "Marco",
+      "cognome": "Peritore",
+      "eta": 31,
+      "id": 7
+    },
+    {
+      "nome": "Riccardo",
+      "cognome": "Scibetta ",
+      "eta": 34,
+      "id": 8
+    }
+  ]
+}
