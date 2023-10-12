@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* IMPOSTAZIONI GENERALI */
+
+/* HEADER */
+
+/* Prova caratteri diversi */
+p{
+    font-family:'Poppins', sans-serif;
+}
+
+div {
+    margin-top: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* MAIN */
+
+/* ELEMENTI NEL MAIN - ARTICLE */
+
+/* TABELLE */
+
+/* FORM */
+
+/* ELEMENTI NELL' ASIDE */
+
+/* FOOTER */

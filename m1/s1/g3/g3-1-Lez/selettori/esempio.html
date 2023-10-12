@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blocco{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            border-radius: 40% 0 40% 0;
+            /* La proprietà CSS box-shadow aggiunge effetti di ombreggiatura attorno alla cornice 
+            di un elemento. È possibile impostare più effetti separati da virgole. Un'ombra della 
+            scatola è descritta da offset X e Y relativi all'elemento, al raggio di sfocatura e 
+            diffusione e al colore. 
+            Se non viene specificato (impostazione predefinita è outset e non si dichiara in box-shadow), si presume che l'ombra sia 
+            un'ombra esterna (come se la casella fosse sollevata sopra il contenuto). La presenza della 
+            parola chiave inset cambia l'ombra in una all'interno della cornice (come se il contenuto 
+            fosse impresso all'interno della casella). Le ombre inserite vengono disegnate all'interno 
+            del bordo (anche quelle trasparenti), sopra lo sfondo, ma sotto il contenuto. */
+            box-shadow: inset 10px 20px 10px 20px #000;
+            border:10px dotted rgba(0,0,0,0.5)
+        }
+        .blocco-giallo{
+            background-color: yellow;
+            margin-top: 30px;
+            box-shadow: 10px 10px 10px 10px #dc1010;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blocco"></div>
+    <div class="blocco blocco-giallo"></div>
+    
+</body>
+</html>

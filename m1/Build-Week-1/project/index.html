@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmark exam team six</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/question-style.css">
+    <link rel="stylesheet" href="css/result-page.css">
+    <link rel="stylesheet" href="css/review-style.css">
+    <link rel="stylesheet" href="css/intermezzo.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+</head>
+
+<body>
+    <audio id="audioIntro">
+        <source src="assets/audio/Universal Studios.mp3">
+    </audio>
+    <video id="videoIntro" class="scomparsa">
+        <source src="assets/video/mik-css-loop-yp3b8tsx_mBmIBZzw.mp4">
+    </video>
+    <div class="container">
+        <div id="logo">
+            <img src="assets/epicode_logo.png" alt="logo">
+        </div>
+        <div id="contenuto">
+            <div>
+                <h3 class="title">Welcome to <span class="span-block subtitle mb-40">your exam</h3></span>
+                <h4 class="instructions">Instructions</h4>
+                <p class="mb-40">We don't expect <span id="easter">m</span>ost engineers to know the answers to all of these <span
+                        class="span-block">questions, so don't worry if you're unsure of a few of them.</p></span>
+                <ul class="mb-40 myUl">
+                    <li>Each question is timed and can only be answered once.</li>
+                    <li>Changing browers tab or opening other windows will invalidate the question.</li>
+                    <li>This exam will take approx. 0-5 minutes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subContent mb-30">
+            <div>
+                <input required id="consenso" type="checkbox">
+                <label for="consenso">I promise to answer myself without help from anyone</label>
+                <p id="avviso" class="mostraAvviso"><i class="fas fa-exclamation-triangle"></i>To continue please check
+                    the conditions !</p>
+            </div>
+            <button id="acceptBtn">PROCEED</button>
+        </div>
+    </div>
+
+    <template id="quiz-template">
+        <div id="contenitoreDiTutto">
+            <div class="nav">
+                <div><img src="assets/epicode_logo.png" alt="logo epicode"></div>
+                <div id="timer">
+    
+                </div>
+            </div>
+            <div id="contenitoreDomanda">
+                <p class="prima-parte">Question Parte 1</p>
+            </div>
+    
+            <div id="contenitoreRisposte">
+                <div class="risposte-1">
+                    <button class="risposte" id="risposta1">Risposta 1</button>
+                    <button class="risposte" id="risposta2">Risposta 2</button>
+                </div>
+                <div class="risposte-2">
+                    <button class="risposte" id="risposta3">Risposta 3</button>
+                    <button class="risposte" id="risposta4">Risposta 4</button>
+                </div>
+            </div>
+            <div id="numeroDomande">QUESTION 1<span id="domandeRimaste">&nbsp;/ 10</span></div>
+        </div>
+    </template>
+
+    <div id="div-quiz"></div>
+
+    <template id="intermezzo-quiz-result-template">
+        <div class="container">
+            <div id="logo">
+                <img src="assets/epicode_logo.png" alt="logo">
+            </div>
+            <div class="p-cont">
+                <p class="first-p">Sto caricando i risultati.. Un momento</p>
+                <p class="second-p">Ancora un momento..</p>
+            </div>
+            <video class="corriere displayNone">
+                <source src="assets/video/mik-corriere.mp4" type="video/mp4">
+            </video>
+        </div>
+    </template>
+
+    <div id="intermezzo-welcome-quiz"></div>
+
+    <template id="results-template">
+        <audio id="suonoPromozione">
+            <source src="assets/audio/92 min.mp3">
+        </audio>
+        <audio id="suonoBocciatura">
+            <source src="assets/audio/Tromba Sfiatata  Trumpet out of Tune 🎺 [EFFETTO SONORO SOUND  EFFECT] 🎺.mp3">
+        </audio>
+        <div id="mainContainer">
+            <div id="imgContainer"><img src="assets/epicode_logo.png" alt="logo epicode"></div>
+            <div id="titlesContainer">
+                <h3>Results</h3>
+                <p id="sommario">The summary of your answers:</p>
+                <div>
+                    <p id="complimenti"></p>
+                </div>
+    
+                <div>
+                    <p id="descrizione"></p>
+                </div>
+            </div>
+            <div id="resultsContainer">
+                <div class="containerPercent">
+                    <p>Corrects</p>
+                    <span id="percentualeCorrette"></span>
+                    <p class="comparazione"><span id="numeroCorrette"></span> of <span class="numeroDomande"></span> questions
+                    </p>
+                </div>
+    
+                <div class="contenitoreDelChart">
+                    <canvas id="myChart"></canvas>
+                </div>
+    
+                <div class="containerPercent">
+                    <p>Wrong</p>
+                    <span id="percentualeSbagliate"></span>
+                    <p class="comparazione"><span id="numeroSbagliate"></span> of <span class="numeroDomande"></span>
+                        question</p>
+                </div>
+            </div>
+            <div id="button">
+                <button class="rateButton">RATE US</button>
+            </div>
+        </div>
+    </template>
+
+    <div id="intermezzo-quiz-result"></div>
+
+    <div id="div-result"></div>
+
+    <template id="review-template">
+        <div class="review-container">
+            <div id="logo">
+                <img src="assets/epicode_logo.png" alt="logo">
+            </div>
+            <h3 class="title">Tell us how it's going</h3>
+            <p class="mt-20 p-class">From 0 to 10, how likely are you to recommend EPICODE</p>
+            <p class="mb-30 p-class">to a friend or a colleague?</p>
+            <div class="stars-container">
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+                <svg class="stars-svg" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" />
+                </svg>
+            </div>
+            <form>
+                <p class="p-class mb-40">Leave us an open feedback about your experience so far</p>
+                <input type="text" class="user-review" placeholder="Write your comment here">
+                <button type="submit" class="customBtn mb-30">MORE INFO</button>
+            </form>
+        </div>
+    </template>
+
+    <div id="div-review"></div>
+
+    <template id="grazie">
+        <div class="container">
+            <div id="logo">
+                <img src="assets/epicode_logo.png" alt="logo">
+            </div>
+            <div class="p-cont">
+                <p class="first-p">Grazie per il Feedback!</p>
+                <p class="second-p">.. Michele usa il CSS Inline ..</p>
+            </div>
+        </div>
+    </template>
+
+    <div id="div-grazie"></div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
