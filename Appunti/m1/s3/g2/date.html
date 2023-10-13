@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let now = new Date();
+
+        let anno = now.getFullYear();
+        let weekDay = now.getDay();//l'indice del giorno della settimana, parte da domenica e va da 0 a 6
+
+        let giorni = [
+            'domenica',
+            'lunedì',
+            'martedì',
+            'mercoledì',
+            'giovedì',
+            'venerdì',
+            'sabato'
+        ]
+
+        console.log(giorni[weekDay]);
+
+        let monthDay = now.getMonth();//il conteggio parte da zero
+
+        let time = now.getTime();
+
+        console.log(anno, weekDay, monthDay, time);
+        
+        now.setMonth(12);
+        console.log(now);
+
+        //data ad un mese da oggi
+        let future = new Date();
+
+        future.setMonth(future.getMonth() + 1);
+
+        console.log(future);
+
+        //localizzare le date
+        let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+        let dataItaliano = future.toLocaleDateString('it-IT',options);
+        console.log(dataItaliano);
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+    </script>
+
+</body>
+</html>

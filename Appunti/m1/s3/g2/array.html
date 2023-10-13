@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //eliminare da un array
+
+        {
+
+            let pizze = ['margherita','diavola','marinara'];
+            
+            let indice = 1;
+            let quantità = 1;
+            let eliminati = pizze.splice(indice, quantità);
+            
+            console.log(eliminati);
+        }
+            
+        //sostituire da un array
+        {
+
+            let pizze = ['margherita','diavola','marinara'];
+            
+            let indice = 2;
+            let quantità = 1;
+            pizze.splice(indice, quantità,'4 formaggi');
+
+            console.log(pizze);
+
+            
+            
+        }
+        
+        {
+
+            //ricerco ed elimino
+            let pizze = ['margherita','diavola','marinara'];
+            
+            let indice = pizze.indexOf('diavola')//cerco l'indice di diavola
+            let quantità = 1;
+            pizze.splice(indice, quantità);
+
+            console.log(pizze);
+
+            
+            
+        }
+        
+        
+
+
+
+
+
+
+
+
+
+
+        const starWarsCharacters = [
+            {
+                name: "Luke Skywalker",
+                height: "172",
+                mass: "277",
+                hair_color: "blond",
+                skin_color: "fair",
+                eye_color: "blue",
+                birth_year: "19BBY",
+                gender: "male"
+            },
+            {
+                name: "C-3PO",
+                height: "167",
+                mass: "75",
+                hair_color: "n/a",
+                skin_color: "gold",
+                eye_color: "yellow",
+                birth_year: "112BBY",
+                gender: "n/a"
+            },
+            {
+                name: "R2-D2",
+                height: "96",
+                mass: "32",
+                hair_color: "n/a",
+                skin_color: "white, blue",
+                eye_color: "red",
+                birth_year: "33BBY",
+                gender: "n/a"
+            },
+            {
+                name: "Darth Vader",
+                height: "202",
+                mass: "136",
+                hair_color: "none",
+                skin_color: "white",
+                eye_color: "yellow",
+                birth_year: "41.9BBY",
+                gender: "male"
+            },
+            {
+                name: "Leia Organa",
+                height: "150",
+                mass: "49",
+                hair_color: "brown",
+                skin_color: "light",
+                eye_color: "brown",
+                birth_year: "19BBY",
+                gender: "female"
+            },
+            {
+                name: "Owen Lars",
+                height: "178",
+                mass: "120",
+                hair_color: "brown, grey",
+                skin_color: "light",
+                eye_color: "blue",
+                birth_year: "52BBY",
+                gender: "male"
+            },
+            {
+                name: "Beru Whitesun lars",
+                height: "165",
+                mass: "75",
+                hair_color: "brown",
+                skin_color: "light",
+                eye_color: "blue",
+                birth_year: "47BBY",
+                gender: "female"
+            },
+            {
+                name: "R5-D4",
+                height: "97",
+                mass: "32",
+                hair_color: "n/a",
+                skin_color: "white, red",
+                eye_color: "red",
+                birth_year: "unknown",
+                gender: "n/a"
+            },
+            {
+                name: "Biggs Darklighter",
+                height: "183",
+                mass: "84",
+                hair_color: "black",
+                skin_color: "light",
+                eye_color: "brown",
+                birth_year: "24BBY",
+                gender: "male"
+            },
+            {
+                name: "Obi-Wan Kenobi",
+                height: "182",
+                mass: "77",
+                hair_color: "auburn, white",
+                skin_color: "fair",
+                eye_color: "blue-gray",
+                birth_year: "57BBY",
+                gender: "male"
+            }
+            ];
+
+            //cerca ed elimina un personaggio basandoti su un valore
+            let indice = starWarsCharacters.findIndex(function(c){
+                return c.name == "Darth Vader" && c.gender == "male";
+            });
+            //versione oneline con fn freccia
+            //let indice = starWarsCharacters.findIndex(c => c.name == "Darth Vader" && c.gender == "male");
+
+            console.log(indice);
+
+            starWarsCharacters.splice(indice,1);
+
+            //ricerca di una serie di oggetti con un determinato valore
+            let risultato = starWarsCharacters.filter(function(c){
+                return c.gender == "male";
+            })
+
+            console.log(risultato);
+
+            //trova il numero più grande
+            let numeri = [80,800,500,63];
+            let res = numeri.reduce(function(p,c){
+                if(p < c){
+                    return c;
+                }else{
+                    return p;
+                }
+            })
+            
+            //let res2 = numeri.reduce((p,c) => p < c ? c : p );
+
+            /*
+            versione avanzata di ricerca/eliminazione
+            */            
+            function searchAndDestroy(chiave, valore){
+                let indice = starWarsCharacters.findIndex(c => c[chiave] == valore);
+                starWarsCharacters.splice(indice,1);
+            }
+
+            searchAndDestroy('birth_year','57BBY');
+            console.log(starWarsCharacters);
+
+
+            //concatenare array 
+            
+            
+            let n1 = [0,1,2,3];
+            let n2 = [4,5,6,7];
+
+            let unito = n1.concat(n2);//[0,1,2,3,4,5,6,7]
+            //spread operator
+            let unito2 = [...n1,...n2]//[0,1,2,3,4,5,6,7]
+            
+
+
+    </script>
+
+</body>
+</html>

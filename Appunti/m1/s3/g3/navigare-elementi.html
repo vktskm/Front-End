@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="prova">
+        <input type="text">
+        <span></span>
+    </div>
+
+    <script>
+
+        let genitore = document.querySelector('#prova');
+        let figlio = genitore.querySelector('input');//tutti gli input dentro all'elemento genitore
+
+        console.log(genitore.childNodes);//lista che mostra anche i textNode
+        console.log(genitore.firstElementChild);//il primo elemento html figlio
+        console.log(genitore.firstChild);//il primo nodo testuale
+        console.log(genitore.childNodes[1].nextElementSibling);
+
+        let figlioSpan = genitore.querySelector('span');
+        console.log(figlioSpan.parentElement);//l'elemento genitore
+        console.dir(figlioSpan.parentNode);//l'elemento genitore
+        console.dir(figlioSpan.previousElementSibling);//l'elemento fratello precedente
+
+    </script>
+
+</body>
+</html>

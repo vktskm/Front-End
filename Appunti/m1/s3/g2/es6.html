@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let persona1 = {
+            name: 'John',
+            gender: 'male'
+        }
+        
+        let persona2 = {
+            lastName: 'Doe',
+            gender: 'female'
+        }
+        
+        
+
+        let personaCompleto = {
+            ...persona1,
+            ...persona2
+        }
+
+        console.log(personaCompleto);
+
+
+        //assegnamento in destrutturazione
+
+        let dati = ['Margherita',5,true];
+
+        let [gusto, , disponibilità] = dati;//prendo il primo e l'ultimo valore
+
+        console.log(gusto);
+        console.log(disponibilità);
+
+        //destrutturazione di oggeti
+        let personaX = {
+            name: "John",
+            gender: "male",
+            lastName: "Doe"
+        }
+
+        let {name, gender, lastName} = personaX;
+
+        console.log(name);
+
+    </script>
+</body>
+</html>

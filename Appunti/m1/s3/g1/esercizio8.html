@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+                
+        /* ESERCIZIO 8
+        Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
+        La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
+        */
+
+        function upperFirst(string){
+            let wordsArray = string.split(" ");//divido tra loro le parole dove c'è lo spazio ed ottengo un array
+            console.log(wordsArray);
+
+            let capitalizedWords = [];//creo un array vuoto che restituirò alla fine della funzione
+            for(let word of wordsArray){//ciclo l'array
+
+                let firstLetter = word[0].toUpperCase();//ottengo la prima lettera della parola che sto ciclando e la trasformo in maiuscolo
+
+                let parolaSenzaIniziale = word.slice(1);//prelevo la sottostringa della parola, contenente tutti i caratteri a partire dal secondo(compreso)
+
+                word = firstLetter + word.slice(1);//concateno iniziale maiuscola con il resto della parola
+                capitalizedWords.push(word)//metto nel nuovo array la parola modificata
+
+            }
+ 
+            return capitalizedWords.join(' ');//restituisco l'array, dopo averlo trasformato in stringa
+        }
+
+        let risultato = upperFirst('La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa');
+
+        console.log(risultato);
+
+
+        //faccio la stessa cosa con un for loop
+
+        function upperFirstForLoop(string){
+            let wordsArray = string.split(" ");
+
+            let capitalizedWords = [];
+            for(let i = 0; i < wordsArray.length; i++){
+
+                let word = wordsArray[i];
+
+                let firstLetter = word[0].toUpperCase();
+
+                let parolaSenzaIniziale = word.slice(1);
+                word = firstLetter + word.slice(1);
+                capitalizedWords.push(word)
+
+            }
+ 
+            return capitalizedWords.join(' ');
+        }
+
+
+        //faccio la stessa cosa con un map
+
+        function upperFirstMap(string){
+            let wordsArray = string.split(" ");
+
+            return wordsArray.map(word => {
+
+                let firstLetter = word[0].toUpperCase();
+                let parolaSenzaIniziale = word.slice(1);
+                word = firstLetter + word.slice(1);
+                return word;
+
+            }).join(' ');
+        }
+
+        risultato = upperFirst('La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa');
+
+        console.log(risultato);
+
+    </script>
+
+</body>
+</html>

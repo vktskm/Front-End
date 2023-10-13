@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blocco{
+            height:100px;
+            width:100px;
+            display: block;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="test"></div>
+    
+    <script>
+
+        //il primo approccio per chiedere a js di creare html, sarebbe proprio quello di scrivere stringhe di html e passarle alle direttive di output
+        //questa metodologia è sconsigliata
+        let html = '<div class="blocco">Hello World!</div>';
+
+        //document.write(html);
+
+        let test = document.querySelector('#test');
+        
+        test.innerHTML = html;
+
+
+        //ecco la metodologia giusta
+
+        let div = document.createElement('span');//<span></span>
+        //creo l'elemento, ma non lo visualizzo ancora
+        div.textContent = 'Elemento creato dinamicamente';//<span>Elemento creato dinamicamente</span>
+        div.style.color = 'red';//<span style="color:red">Elemento creato dinamicamente</span>
+        div.classList.add('blocco');
+        div.id = 'pippo'
+        
+        console.dir(div);
+
+        //aggiunge il contenuto alla fine dell'elemento target (test)
+        test.appendChild(div);
+
+        //in alternativa ci sono questi 2 metodi
+        //test.append(div);//aggiunge alla fine
+        //test.prepend(div);//aggiunge all'inizio
+
+
+
+
+    </script>
+
+</body>
+</html>

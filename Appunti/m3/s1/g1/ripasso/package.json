@@ -1,0 +1,11 @@
+{
+  "name": "ripasso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:ts": "tsc --outfile js/app.js -w"
+  },
+  "author": "",
+  "license": "ISC"
+}

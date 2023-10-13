@@ -1,0 +1,11 @@
+
+<table class="table">
+
+  <tr *ngFor="let post of postArray" >
+    <td>{{ post.id }}</td>
+    <td>{{ post.title }}</td>
+    <td>{{ post.active }}</td>
+    <td><button (click)="toggleStatus(post)" class="btn btn-warning">Disattiva</button></td>
+  </tr>
+
+</table>

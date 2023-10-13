@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //le funzioni sono soggette ad hoisting, quindi posso invocarle prima della loro definizione
+        prova();
+
+        function prova(){
+            console.log('invocata');
+        }
+
+        //posso invocare la funzione N volte
+        prova();
+        prova();
+        
+        console.log(prova());//undefined
+
+        //return
+        //ATTENZIONE: return termina la funzione
+        function provaReturn(){
+            return 'Dato restituito';
+        }
+
+        console.log(provaReturn());//'Dato restituito';
+
+        //funzioni parametriche
+
+        function somma(a,b){
+            //alert(a + b);
+            return a + b;
+        }
+
+        let risultato = somma(5,2);
+        console.log('il risultato della somma è pari a ' + risultato);
+
+        let risultato2 = somma(2)//il valore di b, essendo mancante sarà undefined
+        console.log(risultato2);// 2 + undefined =  NaN
+
+        //parametri opzionali
+
+        function sommaTripla(a,b,c){
+
+            if(c === undefined){
+                c = 0;
+            }
+            /* 
+            //versione ristretta
+            if(!c){
+                c = 0;
+            }
+            //operatore di coalescenza
+            c = c || 0
+            */
+
+            return a + b + c;
+        }
+
+        let risultato3 = sommaTripla(2,2,2);
+        console.log('il risultato n° 3 è pari a ' + risultato3);
+        
+
+        //è possibile impostare valori predefiniti, che verranno usati se in fase di invocazione non viene inserito un valore
+        function sommaTriplaPro(a = 0, b = 0, c = 0){
+            return a + b + c;
+        }
+        
+        let risultato4 = sommaTriplaPro(2,3);//il valore di c è volutamente mancante, il suo valore verrà quindi impostato a 0(valore predefinito)
+        console.log('il risultato n° 4 è pari a ' + risultato4);
+
+
+        //funzione con argomenti illimitati
+
+        function sommaPro(...numeri){
+            let risultato = 0;
+           /* versione base con for loop
+            for(i = 0; i < numeri.length; i++){
+                risultato += numeri[i]
+            }
+            */
+            for(let n of numeri){
+                risultato += n;
+            }
+            return risultato;
+        }
+
+        let risultato5 = sommaPro(4,8,90,7,9,5,4);//tutti i valori verranno messi nell'array numeri
+        console.log('il risultato n°5 è pari a ' + risultato5);
+
+        let arrNumeri = [4,8,90,7,9,5,4];
+        let risultato6 = arrNumeri.reduce(function(p,c){
+            return p + c;
+        })
+        console.log(risultato6);
+
+
+        
+
+
+    </script>
+</body>
+</html>

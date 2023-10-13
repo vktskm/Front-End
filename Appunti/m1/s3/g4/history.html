@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blocco{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+        }
+        .blocco:target{
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+
+
+        <ul>
+            <li><a href="#b1">Blocco 1</a></li>
+            <li><a href="#b2">Blocco 2</a></li>
+            <li><a href="#b3">Blocco 3</a></li>
+        </ul>
+
+        <div id="b1" class="blocco">1</div>
+        <div id="b2" class="blocco">2</div>
+        <div id="b3" class="blocco">3</div>
+
+
+        <button onclick="history.back()">Indietro</button>
+        <button onclick="history.forward()">Avanti</button>
+
+
+    
+    <script>
+
+
+
+    </script>
+
+</body>
+</html>
